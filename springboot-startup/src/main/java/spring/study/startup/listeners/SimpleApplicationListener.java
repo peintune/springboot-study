@@ -11,6 +11,9 @@ import org.springframework.context.ApplicationListener;
 public class SimpleApplicationListener implements ApplicationListener<ApplicationEvent> {
     @Override
     public void onApplicationEvent(ApplicationEvent event) {
+
+        System.out.println("监听到listener事件");
+
         if(event instanceof ApplicationStartedEvent) {
             System.out.println("===== custom started event in initializer");
         } else if(event instanceof ApplicationReadyEvent) {

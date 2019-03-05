@@ -13,6 +13,7 @@ public class SimpleApplicationContextInitializer implements ApplicationContextIn
     public void initialize(ConfigurableApplicationContext applicationContext) {
         if(applicationContext instanceof AnnotationConfigEmbeddedWebApplicationContext) {
             ((AnnotationConfigEmbeddedWebApplicationContext)applicationContext).getBeanFactory().registerSingleton("testBean", new SimpleBean("id-001", "created by initializer"));
+            System.out.println("加载initializer");
         }
     }
 }
